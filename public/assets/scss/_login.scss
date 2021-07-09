@@ -1,0 +1,90 @@
+.login__top {
+    background: linear-gradient(90deg,#2c5364,#203a43,#0f2027);
+    height: 42px;
+    padding: 9px 0px;
+    .login__heading {
+        display: inline-block;
+        font-size: 1.125rem;
+        line-height: 20px;
+        color: $lightColor;
+        text-decoration: none;
+        text-transform: uppercase;
+        letter-spacing: 0.03em;
+    }
+}
+
+.login__container {
+    width: 100%;
+    height: calc(100vh - 42px);
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    @include flexbox;
+    align-items: center;
+    justify-items: center;
+    position: relative;
+}
+.login__box--inner {
+    width: 100%;    
+    background-color: $ghostwhite;
+    @include borderRadius(5px);
+    padding: 22px 20px;
+}
+.login__box {
+    max-width: 390px;    
+    width: 100%;
+    padding: 0 15px;    
+    margin: auto;
+    .form-control {
+        @include borderRadius(0px);
+        height: 50px;
+       &:focus {
+            border-color: $midnightblue;
+            outline: none;
+            box-shadow: none;
+       }
+    }
+    .input-group-text {
+        min-width: 50px;
+        align-items: center;
+        justify-content: center;
+        background-color: $midnightblue;
+        color: $lightColor;
+        @include borderRadius(0px);
+        border: 1px solid $midnightblue;
+    }
+    .btn {
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+}
+.message__box {
+    width: 100%;
+    max-width: 360px;
+    position: fixed;
+    right: 0px;
+    top: 70px;
+    z-index: 100;
+    text-align: center;
+    p {
+        font-weight: 600;
+        font-size: 1.25rem;
+    }
+}
+
+@media(max-width: 767px) {
+    .login__container {
+        display: block;
+    }
+    .login__box {
+        position: absolute;
+        left: 50%;
+        top: 110px;
+        @include transform(translateX(-50%));
+    }
+}
+@media(max-width: 410px) {
+    .message__box {
+        max-width: 340px;
+    }
+}

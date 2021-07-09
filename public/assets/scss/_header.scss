@@ -1,0 +1,168 @@
+.header {
+    height: 57px;
+    background-color: $lightColor;
+    border-bottom: 1px solid $gainsboro;
+    padding-left: 250px;
+    position: fixed;
+    width: 100%;
+    left: 0;
+    top: 0;
+    z-index: 10;
+    .header__inner {
+        height: 100%;
+        width: 100%;
+        padding: 10px 15px;
+        @include flexbox;
+        align-items: center;
+        justify-content: flex-end;
+        position: relative;
+        .add__organize {
+            position: absolute;
+            left: 15px;
+            top: 4px;
+        }
+    }
+}
+.navBox {    
+    width: 250px;
+    box-shadow: 0 14px 28px rgba(0,0,0,.25),0 10px 10px rgba(0,0,0,.22);
+    z-index: 15;    
+    position: fixed;
+    left: 0px;
+    top: 57px;
+    bottom: 0px;
+    .nav__inner {
+        height: 100%;
+        overflow: auto;
+        padding: 8px 0;        
+        background-color: $darkColor-100;
+        position: relative;
+        z-index: 1;
+    }
+}
+.logo {
+    height: 57px;
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    z-index: 1;
+    width: 250px;
+    border-bottom: 1px solid $darkslategray; 
+    background-color: $darkColor-100;   
+    box-shadow: 0 14px 28px rgba(0,0,0,.25),0 10px 10px rgba(0,0,0,.22);
+    .logo__brand {
+        display: block;
+        font-size: 1.3rem;
+        line-height: 1.5;
+        padding: 12px 20px;
+        color: rgba(255,255,255,.8);
+        @include flexbox;
+        align-items: center;
+        flex-wrap: wrap;
+        img {
+            width: 33px;
+            @include opacity(0.8);
+            margin-right: 8px;
+            margin-top: -4px;
+            @include borderRadius(50%);
+        }
+        .brand__text {
+            font-weight: 300;
+            letter-spacing: 0.03em;
+            padding-top: 3px;
+            text-transform: uppercase;
+        }
+    }
+}
+.nav__menu {
+    padding: 0 8px;
+    li {
+        margin-bottom: 3px;
+        a {
+            color: $silver;
+            display: block;
+            padding: 8px 15px 9px 45px;
+            @include borderRadius(5px);
+            position: relative;
+            letter-spacing: 0.03em;
+            .nav__icons {
+                position: absolute;
+                left: 20px;
+                top: 12px;
+                width: 16px;
+                display: block;
+            }
+        }
+        &:hover, &.active {
+            a {
+                color: $lightColor;
+                background-color: rgba(255,255,255,.1);
+            }
+        }
+    }
+}
+.profile__dropdown {
+    .btn {
+        display: block;
+        width: 40px;
+        height: 40px;
+        @include borderRadius(50%);
+        padding: 0px;
+        font-size: 40px;
+        color: $darkColor-100;
+        span {
+            display: block;
+            line-height: 40px;
+        }
+        &:after {
+            display: none;
+        }
+        &:focus {
+            outline: none;
+            box-shadow: none;
+        }
+    }
+}
+
+@media(max-width: 991px) {
+    .navBox {
+        box-shadow: none;
+        @include transition(all 0.3s);
+        left: -250px;
+        &.opened {
+            left: 0px;
+        }
+        .tab-overlay {
+            z-index: 0;
+        } 
+    }
+    .header {
+        padding-left: 123px;
+        .header__inner {
+            justify-content: space-between;
+        }
+    }
+    .logo {
+        box-shadow: none;
+        width: 123px;
+        .logo__brand {
+            padding-left: 15px;
+            padding-right: 15px;
+        }
+    } 
+    .mob-tab {
+        display: inline-flex;
+        align-items: center;
+        font-size: 30px;
+        line-height: 30px;
+        color: $darkColor-100;
+        &:focus, &:hover {
+            color: $darkColor-100;
+        }
+    }
+}
+@media(min-width: 992px) {
+    .mob-tab {
+        display: none;
+    } 
+}

@@ -1,0 +1,19 @@
+
+.modal{
+    &.new__modal {
+        .modal-header{
+            border-bottom: none;
+            padding-bottom: 5px;
+            .closed__btn {
+                position: absolute;
+                right: 16px;
+                top: 4px;
+                margin: 0;
+                padding: 0;
+                span {
+                    font-size: 14px;
+                }
+            }
+        }
+    }
+}
