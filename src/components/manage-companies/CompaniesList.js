@@ -1,5 +1,4 @@
 import React from "react";
-import styled from "styled-components";
 import swal from "sweetalert";
 import { toast } from "react-toastify";
 import { useSelector, useDispatch } from "react-redux";
@@ -10,11 +9,6 @@ import SyncFusionTable from "../common/Tables/SyncFusionTable";
 import GlobalLoader from "../common/GlobalLoader";
 
 import "react-toastify/dist/ReactToastify.css";
-
-const Item = styled.div`
-  text-align: center;
-  font-weight:700;
-`;
 
 const CompaniesList = ({ history, ...props }) => {
   const dispatch = useDispatch();
@@ -43,11 +37,9 @@ const CompaniesList = ({ history, ...props }) => {
   };
 
   const handleAlert = (id) => {
-    console.log("user id: ", id);
-
     const wrapper = document.createElement("div");
 
-    wrapper.innerHTML = <Item>Are you sure want to Delete Company?</Item>;
+    wrapper.innerHTML = `<div style="text-align:center"> <p><b>Are you sure want to Delete Company?</b>`;
 
     swal({
       content: wrapper,
